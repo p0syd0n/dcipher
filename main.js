@@ -1,6 +1,9 @@
 const dcipher = require('dcipher');
 const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 
+const port = process.env.PORT || 3000
 const app = express();
 
 dcipher('21232f297a57a5a743894a0e4a801fc3').then(plaintext => {
@@ -34,4 +37,4 @@ app.get('/', (req, res) => {
   }
 })
 
-app.listen(port=3000)
+app.listen(port=port)
